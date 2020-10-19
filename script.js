@@ -10,4 +10,3 @@ function isTouching(a, b) {
     );
 }
 
-Add function whick make reaction when avatar and coin are overllaped
