@@ -9,4 +9,6 @@ Game is built with pure HTML, CSS and JS, without CanvasJS.
  
 ![](2020-10-18-14-16-35.png)
 
+![](2020-10-21-19-17-11.png)
+
 
