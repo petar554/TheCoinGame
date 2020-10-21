@@ -32,8 +32,26 @@ window.addEventListener('keyup', function (e) {
 
     if (isTouching(avatar, coin)) {
         moveCoin();
+        let parsedResult = parseInt(result.innerText);
+        parsedResult = parsedResult + 1
+        result.innerText = parsedResult
+        btn.style.visibility = 'hidden';
+        if (result.innerText == 10) {
+            document.body.style.backgroundImage = "url('images/last_thumb1477530443-removebg-preview.png')";
+            document.body.style.backgroundColor = 'Gold'
+            coin.style.visibility = 'hidden';
+            result.style.visibility = 'hidden';
+            btn.style.visibility = 'visible';
+        }
+        if (btn.addEventListener('click', function () {
+            moveCoin();
+            document.body.style.backgroundImage = "url('')";
+            document.body.style.backgroundColor = 'white'
+            coin.style.visibility = 'visible';
+            result.innerText = 0
+            result.style.visibility = 'visible';
+        }));
     }
-
 });
 
 const arrowUpDown = (avatar, amount) => {
@@ -49,8 +67,6 @@ const extractNum = (string) => {
     if (!string) return 200;
     return parseInt(string.slice(0, -2));
 }
-
-
 
 const moveCoin = () => {
     const randomWidth = Math.floor(Math.random() * window.innerWidth);
