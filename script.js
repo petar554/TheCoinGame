@@ -30,6 +30,10 @@ window.addEventListener('keyup', function (e) {
         arrowLeftRight(avatar, 50);
     }
 
+    if (isTouching(avatar, coin)) {
+        moveCoin();
+    }
+
 });
 
 const arrowUpDown = (avatar, amount) => {
@@ -45,3 +49,14 @@ const extractNum = (string) => {
     if (!string) return 200;
     return parseInt(string.slice(0, -2));
 }
+
+
+
+const moveCoin = () => {
+    const randomWidth = Math.floor(Math.random() * window.innerWidth);
+    const randomHeight = Math.floor(Math.random() * window.innerHeight);
+    coin.style.top = `${randomHeight}px`
+    coin.style.left = `${randomWidth}px`
+}
+moveCoin();
+
